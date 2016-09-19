@@ -13,7 +13,7 @@ pip install -r requirements.txt
 python rcp.py url output.csv
 ```
 
-Example:
+## Example
 
 ```
 python rcp.py http://www.realclearpolitics.com/epolls/2016/president/us/general_election_trump_vs_clinton-5491.html general.csv
