@@ -1,7 +1,11 @@
 from bs4 import BeautifulSoup
-import urllib2
 import sys
 import csv
+
+try:
+    from urllib.request import urlopen
+except ImportError:
+    from urllib2 import urlopen
 
 data = []
 output = ''
@@ -16,7 +20,7 @@ else:
 
 url = sys.argv[1]
 
-response = urllib2.urlopen(url)
+response = urlopen(url)
 
 soup = BeautifulSoup(response, 'html.parser')
 
@@ -28,6 +32,6 @@ for row in rows:
     cols = [ele.text.strip() for ele in cols]
     data.append([ele for ele in cols])
 
-with open(output, "wb") as f:
+with open(output, "w") as f:
     writer = csv.writer(f)
     writer.writerows(data)
