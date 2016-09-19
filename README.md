@@ -1,6 +1,12 @@
 # rcp
 Simple script to scrape polling data from realclearpolitics and output as .csv.
 
+## Install 
+
+```
+pip install -r requirements.txt
+```
+
 ## Usage
 
 ```
