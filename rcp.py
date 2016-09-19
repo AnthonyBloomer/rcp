@@ -24,16 +24,9 @@ full_poll = soup.find("div", {"id": 'polling-data-full'})
 rows = full_poll.find('table', {"class": 'data'})
 
 for row in rows:
-    cols = row.find_all('th')
+    cols = row.find_all(['th', 'td'])
     cols = [ele.text.strip() for ele in cols]
-    data.append([ele for ele in cols if ele])
-
-for row in rows:
-    cols = row.find_all('td')
-    cols = [ele.text.strip() for ele in cols]
-    data.append([ele for ele in cols if ele])
-
-data = filter(None, data)
+    data.append([ele for ele in cols])
 
 with open(output, "wb") as f:
     writer = csv.writer(f)
