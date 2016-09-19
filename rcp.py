@@ -3,8 +3,16 @@ import urllib2
 import sys
 import csv
 
-if len(sys.argv) != 2:
+data = []
+output = ''
+
+if len(sys.argv) < 2:
     sys.exit('No URL provided.')
+
+if len(sys.argv) == 3:
+    output = sys.argv[2]
+else:
+    output = 'output.csv'
 
 url = sys.argv[1]
 
@@ -14,8 +22,6 @@ soup = BeautifulSoup(response, 'html.parser')
 
 full_poll = soup.find("div", {"id": 'polling-data-full'})
 rows = full_poll.find('table', {"class": 'data'})
-
-data = []
 
 for row in rows:
     cols = row.find_all('th')
@@ -29,6 +35,6 @@ for row in rows:
 
 data = filter(None, data)
 
-with open("output.csv", "wb") as f:
+with open(output, "wb") as f:
     writer = csv.writer(f)
     writer.writerows(data)
