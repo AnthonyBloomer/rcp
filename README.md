@@ -1,5 +1,5 @@
 # rcp
-Simple script to scrape polling data from realclearpolitics and output as .csv.
+Simple script to scrape polling data from RealClearPolitics and output as .csv.
 
 ## Install 
 
