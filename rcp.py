@@ -1,37 +1,32 @@
 from bs4 import BeautifulSoup
 import sys
 import csv
+import argparse
 
 try:
     from urllib.request import urlopen
 except ImportError:
     from urllib2 import urlopen
 
-data = []
-output = ''
+parser = argparse.ArgumentParser()
+parser.add_argument("url")
+parser.add_argument("output", nargs="?", default="output.csv")
+args = parser.parse_args()
 
-if len(sys.argv) < 2:
-    sys.exit('No URL provided.')
-
-if len(sys.argv) == 3:
-    output = sys.argv[2]
-else:
-    output = 'output.csv'
-
-url = sys.argv[1]
-
-response = urlopen(url)
+response = urlopen(args.url)
 
 soup = BeautifulSoup(response, 'html.parser')
 
 full_poll = soup.find("div", {"id": 'polling-data-full'})
 rows = full_poll.find('table', {"class": 'data'})
 
+p = []
 for row in rows:
     cols = row.find_all(['th', 'td'])
     cols = [ele.text.strip() for ele in cols]
-    data.append([ele for ele in cols])
+    p.append([ele for ele in cols])
 
-with open(output, "w") as f:
+with open(args.output, "w") as f:
     writer = csv.writer(f)
-    writer.writerows(data)
+    writer.writerows(p)
+
