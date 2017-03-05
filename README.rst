@@ -16,7 +16,16 @@ Usage
 
 ::
 
-    rcp url output.csv
+    usage: rcp [-h] [-o [OUTPUT]] url
+
+    positional arguments:
+      url                   The url of the polling data.
+
+    optional arguments:
+      -h, --help            show this help message and exit
+      -o [OUTPUT], --output [OUTPUT]
+                            The output file name. Defaults to output.csv
+
 
 Example
 ^^^^^^^

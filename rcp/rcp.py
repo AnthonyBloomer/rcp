@@ -8,8 +8,9 @@ except ImportError:
     from urllib2 import urlopen
 
 parser = argparse.ArgumentParser()
-parser.add_argument("url")
-parser.add_argument("output", nargs="?", default="output.csv")
+parser.add_argument("url", help="The url of the polling data.")
+parser.add_argument('-o', "--output", nargs="?", help="The output file name. Defaults to output.csv",
+                    default="output.csv")
 args = parser.parse_args()
 
 
