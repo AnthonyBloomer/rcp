@@ -19,14 +19,13 @@ def main():
 
     soup = BeautifulSoup(response, 'html.parser')
 
-    full_poll = soup.find("div", {"id": 'polling-data-full'})
-    rows = full_poll.find('table', {"class": 'data'})
+    fp = soup.find("div", {"id": 'polling-data-full'})
+    rows = fp.find('table', {"class": 'data'})
 
     p = []
     for row in rows:
         cols = row.find_all(['th', 'td'])
-        cols = [ele.text.strip() for ele in cols]
-        p.append([ele for ele in cols])
+        p.append([ele.text.strip() for ele in cols])
 
     with open(args.output, "w") as f:
         writer = csv.writer(f)
