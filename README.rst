@@ -32,5 +32,6 @@ Example
 
 ::
 
-    rcp http://www.realclearpolitics.com/epolls/2016/president/us/general_election_trump_vs_clinton-5491.html general.csv
+    python -m rcp http://www.realclearpolitics.com/epolls/2016/president/us/general_election_trump_vs_clinton-5491.html --output general.csv
+
 
