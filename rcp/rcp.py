@@ -23,9 +23,10 @@ def main():
             cols = row.find_all(['th', 'td'])
             p.append([ele.text.strip() for ele in cols])
         
-        fn = pd.rsplit('/', 1)[-1]
-        fn = fn[:-5] + ".csv"
-        print(fn)
+        fn = args.output if args.output else pd.rsplit('/', 1)[-1][:-5] + ".csv"
+        
+        print("Downloading: %s" % fn)
+        
         with open(fn, "w") as f:
             writer = csv.writer(f)
             writer.writerows(p)
