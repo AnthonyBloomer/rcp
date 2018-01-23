@@ -39,7 +39,7 @@ Download multiple polls.
 
 ::  
 
-    python -m rcp http://www.realclearpolitics.com/epolls/2016/president/us/general_election_trump_vs_clinton-5491.html \
+    rcp http://www.realclearpolitics.com/epolls/2016/president/us/general_election_trump_vs_clinton-5491.html \
     > https://www.realclearpolitics.com/epolls/other/president_trump_job_approval_economy-6182.html \
     > https://www.realclearpolitics.com/epolls/other/president_trump_job_approval_foreign_policy-6183.html
 
