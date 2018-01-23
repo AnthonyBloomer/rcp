@@ -16,22 +16,32 @@ Usage
 
 ::
 
-    usage: rcp [-h] [-o [OUTPUT]] url
+    usage: __main__.py [-h] [--output [OUTPUT]] url [url ...]
 
     positional arguments:
-      url                   The url of the polling data.
+      url                The url of the polling data.
 
     optional arguments:
-      -h, --help            show this help message and exit
-      -o [OUTPUT], --output [OUTPUT]
-                            The output file name. Defaults to output.csv
+      -h, --help         show this help message and exit
+      --output [OUTPUT]  The output file name.
 
 
-Example
-^^^^^^^
+Examples
+^^^^^^^^
+
+Get the US general election results.
 
 ::
 
     rcp http://www.realclearpolitics.com/epolls/2016/president/us/general_election_trump_vs_clinton-5491.html --output general.csv
+
+Download multiple polls.
+
+::  
+
+    python -m rcp http://www.realclearpolitics.com/epolls/2016/president/us/general_election_trump_vs_clinton-5491.html \
+    > https://www.realclearpolitics.com/epolls/other/president_trump_job_approval_economy-6182.html \
+    > https://www.realclearpolitics.com/epolls/other/president_trump_job_approval_foreign_policy-6183.html
+
 
 
