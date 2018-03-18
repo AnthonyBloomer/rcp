@@ -16,7 +16,7 @@ Usage
 
 ::
 
-    usage: __main__.py [-h] [--output [OUTPUT]] url [url ...]
+    usage: rcp [-h] [--output [OUTPUT]] url [url ...]
 
     positional arguments:
       url                The url of the polling data.
