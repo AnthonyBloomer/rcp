@@ -21,7 +21,7 @@ def main():
         p = []
         for row in rows:
             cols = row.find_all(['th', 'td'])
-            p.append([ele.text.strip() for ele in cols])
+            p.append([ele.text.encode('utf-8').strip() for ele in cols])
         
         fn = args.output if args.output else pd.rsplit('/', 1)[-1][:-5] + ".csv"
         
