@@ -59,26 +59,23 @@ Search for Fox News poll numbers for Trump:
         td = get_poll_data(poll['url'])
         pprint(td)
 
-The will return a data structure like this:
+The will return a dictionary structured like this:
 
-.. code-block:: json
+.. code-block::
 
 
     [
-      {
-        "data": [
-          {
-            "Biden (D)": "49.6",
-            "Date": "3/27 - 7/9",
-            "MoE": "--",
-            "Poll": "RCP Average",
-            "Sample": "--",
-            "Spread": "Biden +8.5",
-            "Trump (R)": "41.1"
-          }
-        ],
-        "poll": "https://www.realclearpolitics.com/epolls/2020/president/us/general_election_trump_vs_biden-6247.html"
-      }
+        {'data': [{'Biden (D)': '49.6',
+            'Date': '3/27 - 7/9',
+            'MoE': '--',
+            'Poll': 'RCP\xa0Average',
+            'Sample': '--',
+            'Spread': 'Biden +8.5',
+            'Trump (R)': '41.1'},
+            ...
+        },
+        'poll': 'https://www.realclearpolitics.com/epolls/2020/president/us/general_election_trump_vs_biden-6247.html'
+
     ]
 
 Write a poll to CSV:

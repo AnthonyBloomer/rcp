@@ -8,7 +8,7 @@ class RCPTest(unittest.TestCase):
 
     def test_get_polling_data(self):
         p = get_polls()
-        polling_data = get_poll_data(p[0]['url'], json=True)
+        polling_data = get_poll_data(p[0]['url'], d=True)
         self.assertIsNotNone(polling_data)
         self.assertIn('poll', polling_data[0])
         self.assertIn('data', polling_data[0])

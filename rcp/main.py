@@ -18,7 +18,7 @@ args = parser.parse_args()
 def main():
     for pd in args.url:
         fn = args.output if args.output else pd.rsplit('/', 1)[-1][:-5] + ".csv"
-        p = get_poll_data(pd, json=False)
+        p = get_poll_data(pd, d=False)
         if not p:
             sys.exit("No poll data found.")
         print("Downloading: %s" % fn)

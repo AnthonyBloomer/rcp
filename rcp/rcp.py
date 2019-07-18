@@ -8,6 +8,7 @@ except ImportError:
     from urllib2 import urlopen
 
 import csv
+import json
 
 base = 'https://www.realclearpolitics.com'
 
@@ -46,7 +47,7 @@ def get_polls(q=None, p=None):
     return polling_data
 
 
-def get_poll_data(pd, json=True):
+def get_poll_data(pd, d=True):
     if base not in pd:
         return
 
@@ -66,7 +67,7 @@ def get_poll_data(pd, json=True):
         cols = row.find_all(['th', 'td'])
         p.append([ele.text.strip() for ele in cols])
 
-    if not json:
+    if not d:
         return p
 
     arr = [{
