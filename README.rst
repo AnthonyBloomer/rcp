@@ -68,7 +68,7 @@ The will return a dictionary structured like this:
         {'data': [{'Biden (D)': '49.6',
             'Date': '3/27 - 7/9',
             'MoE': '--',
-            'Poll': 'RCP\xa0Average',
+            'Poll': 'RCP Average',
             'Sample': '--',
             'Spread': 'Biden +8.5',
             'Trump (R)': '41.1'},
