@@ -2,7 +2,7 @@
 
 import csv
 import argparse
-from .rcp import poll_data
+from .rcp import poll_data_as_json
 
 try:
     from urllib.request import urlopen
@@ -18,7 +18,7 @@ args = parser.parse_args()
 def main():
     for pd in args.url:
         fn = args.output if args.output else pd.rsplit('/', 1)[-1][:-5] + ".csv"
-        p = poll_data(pd)
+        p = poll_data_as_json(pd)
         print("Downloading: %s" % fn)
         with open(fn, "w") as f:
             writer = csv.writer(f)
