@@ -21,7 +21,7 @@ def main():
         fn = args.output if args.output else pd.rsplit('/', 1)[-1][:-5] + ".csv"
         p = get_poll_data(pd)
         if not p:
-            sys.exit(1)
+            sys.exit("No poll data found.")
         print("Downloading: %s" % fn)
         with open(fn, "w") as f:
             writer = csv.writer(f)

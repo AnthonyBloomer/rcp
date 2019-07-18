@@ -1,4 +1,4 @@
-from rcp.rcp import main
+from rcp.main import main
 
 if __name__ == '__main__':
     main()
