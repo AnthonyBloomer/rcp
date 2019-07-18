@@ -44,7 +44,7 @@ class PublishCommand(Command):
 
 
 setup(
-    name="rcp",
+    name="realclearpolitics",
     packages=["rcp"],
     entry_points={
         "console_scripts": ['rcp = rcp.rcp:main']
@@ -52,7 +52,7 @@ setup(
     version='1.0.0',
     description="Simple script to scrape polling data from RealClearPolitics and output as .csv",
     long_description=long_descr,
-    keywords=['politics', 'polls', 'rcp', 'web scraping'],
+    keywords=['politics', 'polls', 'rcp', 'realclearpolitics', 'web scraping'],
     author="Anthony Bloomer",
     author_email="ant0@protonmail.ch",
     url="https://github.com/AnthonyBloomer/rcp",
