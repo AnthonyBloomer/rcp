@@ -30,7 +30,7 @@ def get_polls(q=None, p=None):
             t = race.find('a').text
             n = col.find('td', {'class': 'lp-poll'}).find('a').text
 
-            if (q is not None and q.lower() not in t.lower()) or (p is not None and p.lower() not in n.lower()):
+            if (q and q.lower() not in t.lower()) or (p and p.lower() not in n.lower()):
                 continue
 
             v = {

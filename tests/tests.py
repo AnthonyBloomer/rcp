@@ -1,17 +1,32 @@
 import unittest
 
-from rcp.rcp import poll_data_as_json, get_polls
+from rcp.rcp import get_poll_data, get_polls
 
 
 class RCPTest(unittest.TestCase):
 
     def test_get_polling_data(self):
         p = get_polls()
-        polling_data = poll_data_as_json(p[0]['url'])
-        print(polling_data)
+        polling_data = get_poll_data(p[0]['url'], json=True)
         self.assertIsNotNone(polling_data)
+        self.assertIn('poll', polling_data[0])
+        self.assertIn('data', polling_data[0])
+
+    def test_get_polling_data_by_name(self):
+        polls = get_polls(q='trump')
+        for p in polls:
+            self.assertIn('trump', p['title'].lower())
+
+    def test_get_polling_data_by_poll(self):
+        polls = get_polls(p='cnn')
+        for p in polls:
+            self.assertIn('cnn', p['poll'].lower())
+
+    def test_get_polling_data_by_invalid_poll(self):
+        polls = get_polls(p='wow')
+        self.assertEqual(len(polls), 0)
 
     def test_get_polling_data_invalid_url(self):
-        polling_data = poll_data_as_json('https://www.realclearpolitics.com')
+        polling_data = get_poll_data('https://www.realclearpolitics.com')
         print(polling_data)
         self.assertIsNone(polling_data)
