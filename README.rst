@@ -74,7 +74,7 @@ The will return a dictionary structured like this:
                     'Spread': 'Biden +8.5',
                     'Trump (R)': '41.1'},
             ...
-        }],
+            }],
         'poll': 'https://www.realclearpolitics.com/epolls/2020/president/us/general_election_trump_vs_biden-6247.html'
 
     ]
