@@ -8,7 +8,8 @@ from setuptools import setup, Command
 
 with open("README.rst", "rb") as f:
     long_descr = f.read().decode("utf-8")
-    
+
+
 class PublishCommand(Command):
     """Support setup.py publish."""
 
@@ -41,8 +42,9 @@ class PublishCommand(Command):
 
         sys.exit()
 
+
 setup(
-    name="realclearpolitics",
+    name="rcp",
     packages=["rcp"],
     entry_points={
         "console_scripts": ['rcp = rcp.rcp:main']
@@ -50,7 +52,7 @@ setup(
     version='1.0.0',
     description="Simple script to scrape polling data from RealClearPolitics and output as .csv",
     long_description=long_descr,
-    keywords=['politics', 'polls', 'realclearpolitics', 'web scraping'],
+    keywords=['politics', 'polls', 'rcp', 'web scraping'],
     author="Anthony Bloomer",
     author_email="ant0@protonmail.ch",
     url="https://github.com/AnthonyBloomer/rcp",
@@ -59,8 +61,8 @@ setup(
         'requests'
     ],
     classifiers=[
-          'License :: OSI Approved :: MIT License',
-          'Programming Language :: Python :: 2.7'
+        'License :: OSI Approved :: MIT License',
+        'Programming Language :: Python :: 2.7'
     ],
     cmdclass={
         'publish': PublishCommand,

@@ -1,6 +1,6 @@
 import unittest
 
-from rcp.rcp import get_poll_data, get_polls
+from rcp import get_poll_data, get_polls
 import os
 
 
@@ -28,8 +28,7 @@ class RCPTest(unittest.TestCase):
         self.assertEqual(len(polls), 0)
 
     def test_get_polling_data_invalid_url(self):
-        polling_data = get_poll_data('https://www.realclearpolitics.com')
-        print(polling_data)
+        polling_data = get_poll_data('https://www.rcp.com')
         self.assertIsNone(polling_data)
 
     def test_write_to_csv(self):

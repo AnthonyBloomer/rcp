@@ -1,9 +1,8 @@
 # -*- coding: utf-8 -*-
 
-import csv
 import argparse
 import sys
-from .rcp import get_poll_data
+from .rcp import get_poll_data, to_csv
 
 try:
     from urllib.request import urlopen
@@ -23,9 +22,7 @@ def main():
         if not p:
             sys.exit("No poll data found.")
         print("Downloading: %s" % fn)
-        with open(fn, "w") as f:
-            writer = csv.writer(f)
-            writer.writerows(p)
+        to_csv(fn, pd)
 
 
 if __name__ == '__main__':

@@ -7,6 +7,8 @@ try:
 except ImportError:
     from urllib2 import urlopen
 
+import csv
+
 base = 'https://www.realclearpolitics.com'
 
 
@@ -45,10 +47,10 @@ def get_polls(q=None, p=None):
 
 
 def get_poll_data(pd, json=False):
-    response = urlopen(pd)
-
     if base not in pd:
         return
+
+    response = urlopen(pd)
 
     soup = BeautifulSoup(response, 'html.parser')
     fp = soup.find("div", {"id": 'polling-data-full'})
@@ -81,3 +83,9 @@ def get_poll_data(pd, json=False):
         arr[0]['data'].append(b)
 
     return arr
+
+
+def to_csv(fn, p):
+    with open(fn, "w") as f:
+        writer = csv.writer(f)
+        writer.writerows(p)

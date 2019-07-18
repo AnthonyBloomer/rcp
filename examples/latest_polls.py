@@ -1,4 +1,4 @@
-from rcp.rcp import get_polls, get_poll_data
+from rcp import get_polls, get_poll_data
 from pprint import pprint
 
 polls = get_polls(q="Trump", p="Fox")
