@@ -46,7 +46,7 @@ def get_polls(q=None, p=None):
     return polling_data
 
 
-def get_poll_data(pd, json=False):
+def get_poll_data(pd, json=True):
     if base not in pd:
         return
 
@@ -89,3 +89,4 @@ def to_csv(fn, p):
     with open(fn, "w") as f:
         writer = csv.writer(f)
         writer.writerows(p)
+    print("CSV created.")

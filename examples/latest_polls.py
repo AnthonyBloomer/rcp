@@ -3,5 +3,5 @@ from pprint import pprint
 
 polls = get_polls(q="Trump", p="Fox")
 for poll in polls:
-    td = get_poll_data(poll['url'], json=True)
+    td = get_poll_data(poll['url'])
     pprint(td)
