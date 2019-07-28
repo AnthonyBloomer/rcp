@@ -1,8 +1,7 @@
 rcp
 ===
 
-Simple script to scrape polling data from RealClearPolitics and output
-as .csv.
+Python client for RealClearPolitics. 
 
 Install
 ^^^^^^^
