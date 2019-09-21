@@ -74,7 +74,7 @@ The will return a dictionary structured like this:
                     'Poll': 'RCP Average',
                     'Sample': '--',
                     'Spread': 'Biden +8.5',
-                    'InAvg': False,
+                    'InAvg': 'False',
                     'Trump (R)': '41.1'},
             ...
             }],
