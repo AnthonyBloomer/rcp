@@ -64,8 +64,9 @@ def get_poll_data(pd, d=True):
     p = []
 
     for row in rows:
+        rcpAvg = 'InAvg' if ("header" in row['class']) else str("isInRcpAvg" in row['class'])
         cols = row.find_all(['th', 'td'])
-        p.append([ele.text.strip() for ele in cols])
+        p.append([ele.text.strip() for ele in cols] + [rcpAvg])
 
     if not d:
         return p
