@@ -1,3 +1,6 @@
+This fork adds an extra column to the "data" block of each poll called InAvg. InAvg conveys whether the poll is included in RCP's average or not.
+
+
 rcp
 ===
 
@@ -71,6 +74,7 @@ The will return a dictionary structured like this:
                     'Poll': 'RCP Average',
                     'Sample': '--',
                     'Spread': 'Biden +8.5',
+                    'InAvg': False,
                     'Trump (R)': '41.1'},
             ...
             }],
